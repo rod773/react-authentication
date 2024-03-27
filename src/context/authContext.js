@@ -1,4 +1,10 @@
-import { createContext, useState, useCallback, useMemo } from "react";
+import {
+  createContext,
+  useState,
+  useCallback,
+  useMemo,
+  useContext,
+} from "react";
 import PropTypes from "prop-types";
 
 const MY_AUTH_APP = "MY_AUTH_APP";
@@ -35,3 +41,7 @@ export function AuthContextProvider({ children }) {
 AuthContextProvider.propTypes = {
   children: PropTypes.object,
 };
+
+export function useAuthContext() {
+  return useContext(AuthContext);
+}

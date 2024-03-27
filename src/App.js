@@ -5,13 +5,14 @@ import Login from "./views/Login";
 import Private from "./views/Private";
 import Logout from "./views/Logout";
 import { AuthContextProvider } from "./context/authContext";
+import PublicRoute from "./components/router/PublicRoute";
 
 function App() {
   return (
     <AuthContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<PublicToute />}>
+          <Route path="/" element={<PublicRoute />}>
             <Route path={HOME} element={<Home />} />
             <Route path={LOGIN} element={<Login />} />
           </Route>
