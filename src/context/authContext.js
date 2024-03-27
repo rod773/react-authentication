@@ -1,10 +1,11 @@
 import { createContext, useState, useCallback, useMemo } from "react";
+import PropTypes from "prop-types";
 
 const MY_AUTH_APP = "MY_AUTH_APP";
 
 export const AuthContext = createContext();
 
-export function AuthContextrovider({ children }) {
+export function AuthContextProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(
     window.localStorage.getItem(MY_AUTH_APP)
   );
@@ -27,4 +28,10 @@ export function AuthContextrovider({ children }) {
     }),
     [login, logout, isAuthenticated]
   );
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
+
+AuthContextProvider.propTypes = {
+  children: PropTypes.object,
+};
