@@ -3,12 +3,12 @@ import { useState } from "react";
 import { MAGIC_WORD } from "config/const/magicWord";
 
 function Login() {
-  const login = useAuthContext();
+  const { login } = useAuthContext();
 
   const [magicWord, setMagicWord] = useState("");
 
   function handleInputChange(e) {
-    setMagicWord(e.targetValue);
+    setMagicWord(e.target.value);
   }
 
   function handleSubmit(e) {
