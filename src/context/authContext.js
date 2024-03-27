@@ -7,13 +7,13 @@ import {
 } from "react";
 import PropTypes from "prop-types";
 
-const MY_AUTH_APP = "MY_AUTH_APP";
+const MY_AUTH_APP = "MY_AUTH_APP_1";
 
 export const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    window.localStorage.getItem(MY_AUTH_APP)
+    window.localStorage.getItem(MY_AUTH_APP) ?? false
   );
 
   const login = useCallback(function () {
