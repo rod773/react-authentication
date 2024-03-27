@@ -19,9 +19,12 @@ export function AuthContextrovider({ children }) {
     setIsAuthenticated(false);
   }, []);
 
-  const value = useMemo(() => ({
-    login,
-    logout,
-    isAuthenticated,
-  }));
+  const value = useMemo(
+    () => ({
+      login,
+      logout,
+      isAuthenticated,
+    }),
+    [login, logout, isAuthenticated]
+  );
 }
