@@ -1,17 +1,20 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HOME, LOGIN, LOGOUT, PRIVATE } from "./config/routes/path";
+import Home from "./views/Home";
+import Login from "./views/Login";
+import Private from "./views/Private";
+import Logout from "./views/Logout";
 
 function App() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={HOME} element={<Home />} />
+        <Route path={LOGIN} element={<Login />} />
+        <Route path={PRIVATE} element={<Private />} />
+        <Route path={LOGOUT} element={<Logout />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
