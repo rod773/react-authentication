@@ -1,5 +1,14 @@
+import { useEffect } from "react";
+import { useAuthContext } from "context/authContext";
+
 function Logout() {
-  return <h1>Logout</h1>;
+  const { logout } = useAuthContext();
+
+  useEffect(() => {
+    logout();
+  });
+
+  return null;
 }
 
 export default Logout;
